@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: go-mysql-api
+    env: go
+    buildCommand: go build -o app .
+    startCommand: ./app
+    envVars:
+      - key: MYSQL_DSN
+        fromEnvVar: MYSQL_DSN
+    autoDeploy: true
+    branch: main
